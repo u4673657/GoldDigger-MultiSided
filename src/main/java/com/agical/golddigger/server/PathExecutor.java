@@ -87,20 +87,36 @@ public class PathExecutor {
                 String direction = splitPath[3].toLowerCase();
                 String ok = "OK\n";
                 String failed = "FAILED\n";
-                if (direction.startsWith("n")) {
+                if (direction.equals("north")) {
                     writer.write(digger.move(Position.NORTH).map(Functions.<Position, String> constantly(ok),
                             Functions.<String> constantly(failed)));
                 }
-                if (direction.startsWith("e")) {
+                if (direction.equals("east")) {
                     writer.write(digger.move(Position.EAST).map(Functions.<Position, String> constantly(ok),
                             Functions.<String> constantly(failed)));
                 }
-                if (direction.startsWith("w")) {
+                if (direction.equals("west")) {
                     writer.write(digger.move(Position.WEST).map(Functions.<Position, String> constantly(ok),
                             Functions.<String> constantly(failed)));
                 }
-                if (direction.startsWith("s")) {
+                if (direction.equals("south")) {
                     writer.write(digger.move(Position.SOUTH).map(Functions.<Position, String> constantly(ok),
+                            Functions.<String> constantly(failed)));
+                }
+                if (direction.equals("north_east")) {
+                    writer.write(digger.move(Position.NORTH_EAST).map(Functions.<Position, String> constantly(ok),
+                            Functions.<String> constantly(failed)));
+                }
+                if (direction.equals("south_east")) {
+                    writer.write(digger.move(Position.SOUTH_EAST).map(Functions.<Position, String> constantly(ok),
+                            Functions.<String> constantly(failed)));
+                }
+                if (direction.equals("north_west")) {
+                    writer.write(digger.move(Position.NORTH_WEST).map(Functions.<Position, String> constantly(ok),
+                            Functions.<String> constantly(failed)));
+                }
+                if (direction.equals("south_west")) {
+                    writer.write(digger.move(Position.SOUTH_WEST).map(Functions.<Position, String> constantly(ok),
                             Functions.<String> constantly(failed)));
                 }
             }

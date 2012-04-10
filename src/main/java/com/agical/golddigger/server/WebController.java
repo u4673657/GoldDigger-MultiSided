@@ -48,9 +48,6 @@ public class WebController {
         return call("http://localhost:" + port + "/golddigger/digger/" + secretName + "/grab", serverSleep);
     }
 
-    public WebResponse moveWest() {
-        return call("http://localhost:" + port + "/golddigger/digger/" + secretName + "/move/west", serverSleep);
-    }
     public static WebResponse call(String url, int sleep) {
         try {
             WebRequest webRequest = new GetMethodWebRequest(url);
@@ -75,6 +72,26 @@ public class WebController {
 
     public WebResponse moveEast() {
         return call("http://localhost:" + port + "/golddigger/digger/" + secretName + "/move/east", serverSleep);
+    }
+    
+    public WebResponse moveWest() {
+        return call("http://localhost:" + port + "/golddigger/digger/" + secretName + "/move/west", serverSleep);
+    }
+    
+    public WebResponse moveNorth_East() {
+        return call("http://localhost:" + port + "/golddigger/digger/" + secretName + "/move/north_east", serverSleep);
+    }
+
+    public WebResponse moveSouth_East() {
+        return call("http://localhost:" + port + "/golddigger/digger/" + secretName + "/move/south_east", serverSleep);
+    }
+
+    public WebResponse moveNorth_West() {
+        return call("http://localhost:" + port + "/golddigger/digger/" + secretName + "/move/north_west", serverSleep);
+    }
+    
+    public WebResponse moveSouth_West() {
+        return call("http://localhost:" + port + "/golddigger/digger/" + secretName + "/move/south_west", serverSleep);
     }
 
 }
