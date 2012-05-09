@@ -20,7 +20,7 @@ public class Peek {
 	
 	public static int hexX (double x)
 	{
-		return (int) Math.round(3.0/2.0 * x * hexR);
+		return (int) Math.round(3.0/1.85 * x * hexR);
 	}
 	public static int hexY (double x, double y, int c)
 	{
@@ -98,23 +98,19 @@ public class Peek {
 		}
 		else if (Character.isDigit(srep.charAt(0))) {
 			char ch = srep.charAt(0);
-			drawGold(x,y, ch-'0', peekView);
+			drawGold(x,y, ch-'0',peekView);
 		}
 		else {
+			
 			peekView.drawEmpty(x,y);
 		}
 		// orkade inte funktionalisera
 		if(!thisSquare.hasBeenViewed().isSome()) {
-		    peekView.drawShadow(x,y);
+	    peekView.drawShadow(x,y);
 		}
 	}
 
-	private void drawGold(int x, int y, int i, PeekView peekView) {
-		if(numberOfSides == 6){
-			y = hexY(x,y, bounds.getX1());
-			x = hexX(x);
-			
-		}
+	private void drawGold(int x, int y, int i, PeekView peekView) {		
 		peekView.drawGold(x,y, i);
 	}
 

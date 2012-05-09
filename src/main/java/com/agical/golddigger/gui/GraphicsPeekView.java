@@ -1,3 +1,7 @@
+                                                                     
+                                                                     
+                                                                     
+                                             
 package com.agical.golddigger.gui;
 
 import java.awt.Graphics;
@@ -16,12 +20,12 @@ public class GraphicsPeekView implements PeekView {
 		URL url = FieldView.class.getResource("/images/"+name); 
 		return Toolkit.getDefaultToolkit().getImage(url);
 	}
-	private static Image hexImage1 = loadImage("hexagon1.png");
-	private static Image hexImage2 = loadImage("hexagon2.png");
+
+	private static Image hexImage2 = loadImage("hexWall.png");
 	
 	
 	
-	private static Image GOLD1 = loadImage("gold1.png");
+	private static Image GOLD1 = loadImage("hexGold1.png");
 	private static Image GOLD2 = loadImage("gold2.png");
 	private static Image GOLD3 = loadImage("gold3.png");
 	private static Image GOLD4 = loadImage("gold4.png");
@@ -31,8 +35,18 @@ public class GraphicsPeekView implements PeekView {
 	private static Image GOLD8 = loadImage("gold8.png");
 	private static Image GOLD9 = loadImage("gold9.png");
 	
-	private static Image BANK = loadImage("center.png");
-	private static Image SHADE = loadImage("shade square.png");
+	private static Image HEXGOLD1 = loadImage("hexGold1.png");
+	private static Image HEXGOLD2 = loadImage("hexGold2.png");
+	private static Image HEXGOLD3 = loadImage("hexGold3.png");
+	private static Image HEXGOLD4 = loadImage("hexGold4.png");
+	private static Image HEXGOLD5 = loadImage("hexGold5.png");
+	private static Image HEXGOLD6 = loadImage("hexGold6.png");
+	private static Image HEXGOLD7 = loadImage("hexGold7.png");
+	private static Image HEXGOLD8 = loadImage("hexGold8.png");
+	private static Image HEXGOLD9 = loadImage("hexGold9.png");
+	
+	private static Image BANK;
+	private static Image SHADE;
 	
 	private static Image[] golds = new Image[]{GOLD1, GOLD2, GOLD3, GOLD4, GOLD5, GOLD6, GOLD7, GOLD8, GOLD9};
 	
@@ -73,10 +87,11 @@ public class GraphicsPeekView implements PeekView {
 	
 	public static void changeTileSetBasedOnSides(int numberOfSides){
 		if(numberOfSides == 4){
-		    BANK = loadImage("center.png");
+		    BANK = loadImage("bank.png");
 			SHADE = loadImage("shade square.png");
 			DIGGER = loadImage("digger.png");
 			EMPTY = loadImage("empty.png");
+			golds = new Image[]{GOLD1, GOLD2, GOLD3, GOLD4, GOLD5, GOLD6, GOLD7, GOLD8, GOLD9};
 			  W_CENTER =  loadImage("center.png");
 			  SOLID =  loadImage("solid.png");
 			  W_NORTH =  loadImage("w_north.png");
@@ -95,8 +110,9 @@ public class GraphicsPeekView implements PeekView {
 		else if (numberOfSides == 6){
 			BANK = loadImage("bank.png");
 			SHADE = loadImage("shade.png");
-			  DIGGER = loadImage("digger.png");
-			  EMPTY = hexImage1;//loadImage("empty.png");
+			DIGGER = loadImage("digger.png");
+		    EMPTY = loadImage("hexEmpty.png");//loadImage("empty.png");
+			golds = new Image []{HEXGOLD1, HEXGOLD2, HEXGOLD3, HEXGOLD4, HEXGOLD5, HEXGOLD6, HEXGOLD7, HEXGOLD8, HEXGOLD9};
 			  W_CENTER = hexImage2;//loadImage("center.png");
 			  SOLID = hexImage2;//loadImage("solid.png");
 			  W_NORTH = hexImage2;//loadImage("w_north.png");
