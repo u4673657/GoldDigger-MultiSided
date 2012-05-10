@@ -35,4 +35,9 @@ public class EmptyFieldCreator extends FieldCreator {
     public int getMaxLongitude() {
         return maxLongitude;
     }
+	@Override
+	public int getNumberOfSides() {
+		// TODO Auto-generated method stub
+		return 4;
+	}
 }

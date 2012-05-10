@@ -17,7 +17,7 @@ public class GoldField {
 
     private int maxLongitude;
     
-    private int numberOfSides = 6;
+    private int numberOfSides = 4;
     
     public void setGolddiggerNotifier(GolddiggerNotifier golddiggerNotifier) {
         this.golddiggerNotifier = golddiggerNotifier;
@@ -38,16 +38,10 @@ public class GoldField {
         squares = fieldCreator.createField();
         maxLatitude = fieldCreator.getMaxLatitude();
         maxLongitude = fieldCreator.getMaxLongitude();
+        this.numberOfSides = fieldCreator.getNumberOfSides();
     }
     
     
-    public GoldField(FieldCreator fieldCreator, int numberOfSides) {
-        squares = fieldCreator.createField();
-        maxLatitude = fieldCreator.getMaxLatitude();
-        maxLongitude = fieldCreator.getMaxLongitude();
-        this.numberOfSides = numberOfSides;
-    }
-
     public int getMaxLatitude() {
         return maxLatitude;
     }

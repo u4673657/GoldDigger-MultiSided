@@ -33,6 +33,11 @@ public class TestFindingGold {
         public int getMaxLongitude() {
             return 3;
         }
+		@Override
+		public int getNumberOfSides() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
     }
 
     @Before

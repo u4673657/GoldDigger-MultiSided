@@ -15,10 +15,25 @@ public class StringFieldCreator extends FieldCreator {
     public Square[][] createField() {
         return getSquares();
     }
+    
+    public int getNumberOfSides(){
+    	if(result.contains("!")){
+    	String mapInfo = (result.split("!"))[1].toString();
+	    	if(mapInfo.contains("6")){
+	    		return 6;
+    		}
+	    	else{
+	    		return 4;
+	    	}	    	
+    	}
+    	else{
+    		return 4;
+    	}
+    }
 
     private Square[][] getSquares() {
         if(squares!=null) return squares;
-        String[] rows = result.split("\n");
+        String[] rows = (result.split("!")) [0].split("\n");
         squares = new Square[rows.length][];
         for (int rowCount = 0; rowCount<rows.length; rowCount++) {
             String charRow = rows[rowCount];

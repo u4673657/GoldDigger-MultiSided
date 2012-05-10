@@ -33,12 +33,17 @@ public class TestFindingGoldTest6Sided {
         public int getMaxLongitude() {
             return 3;
         }
+		@Override
+		public int getNumberOfSides() {
+			// TODO Auto-generated method stub
+			return 6;
+		}
     }
 
     @Before
     public void before() throws Exception {
         fieldCreator = new FieldCreatorImplementation();
-        goldField = new GoldField(fieldCreator,6);
+        goldField = new GoldField(fieldCreator);
     
     }
     

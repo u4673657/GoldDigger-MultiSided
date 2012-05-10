@@ -111,5 +111,11 @@ public class RandomFieldCreator extends FieldCreator {
         int maxLongitude2 = maxLongitude;
         return create_available.apply(nrOfGoldItems2, nrOfWalls2, maxLatitude2, maxLongitude2);
     }
+
+	@Override
+	public int getNumberOfSides() {
+		// TODO Auto-generated method stub
+		return 4;
+	}
     
 }

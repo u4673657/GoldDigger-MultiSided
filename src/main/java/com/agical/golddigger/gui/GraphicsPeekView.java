@@ -25,7 +25,7 @@ public class GraphicsPeekView implements PeekView {
 	
 	
 	
-	private static Image GOLD1 = loadImage("hexGold1.png");
+	private static Image GOLD1 = loadImage("gold1.png");
 	private static Image GOLD2 = loadImage("gold2.png");
 	private static Image GOLD3 = loadImage("gold3.png");
 	private static Image GOLD4 = loadImage("gold4.png");
