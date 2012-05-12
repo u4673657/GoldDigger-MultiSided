@@ -87,7 +87,7 @@ public class GraphicsPeekView implements PeekView {
 	
 	public static void changeTileSetBasedOnSides(int numberOfSides){
 		if(numberOfSides == 4){
-		    BANK = loadImage("bank.png");
+		    BANK = loadImage("center.png");
 			SHADE = loadImage("shade square.png");
 			DIGGER = loadImage("digger.png");
 			EMPTY = loadImage("empty.png");
@@ -113,7 +113,7 @@ public class GraphicsPeekView implements PeekView {
 			DIGGER = loadImage("digger.png");
 		    EMPTY = loadImage("hexEmpty.png");//loadImage("empty.png");
 			golds = new Image []{HEXGOLD1, HEXGOLD2, HEXGOLD3, HEXGOLD4, HEXGOLD5, HEXGOLD6, HEXGOLD7, HEXGOLD8, HEXGOLD9};
-			  W_CENTER = hexImage2;//loadImage("center.png");
+			  W_CENTER = loadImage("bank.png");
 			  SOLID = hexImage2;//loadImage("solid.png");
 			  W_NORTH = hexImage2;//loadImage("w_north.png");
 			  W_NORTHEAST = hexImage2;//loadImage("w_northeast.png");

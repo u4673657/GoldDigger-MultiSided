@@ -1,5 +1,6 @@
 package com.agical.golddigger.model;
 
+import com.agical.golddigger.gui.GraphicsPeekView;
 import com.agical.golddigger.model.event.GolddiggerNotifier;
 import com.agical.golddigger.model.fieldcreator.EmptyFieldCreator;
 import com.agical.golddigger.model.fieldcreator.FieldCreator;
@@ -38,7 +39,8 @@ public class GoldField {
         squares = fieldCreator.createField();
         maxLatitude = fieldCreator.getMaxLatitude();
         maxLongitude = fieldCreator.getMaxLongitude();
-        this.numberOfSides = fieldCreator.getNumberOfSides();
+        numberOfSides = fieldCreator.getNumberOfSides();
+        GraphicsPeekView.changeTileSetBasedOnSides(numberOfSides);
     }
     
     

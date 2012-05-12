@@ -54,7 +54,7 @@ public class FieldPeek {
 		int maxY = Math.min(fieldHeight, minY + height); 
 		Rectangle bounds = new Rectangle(
 				      adjustMinimum(minX, maxX, width),
-				      adjustMinimum(minY, maxY, height),
+				      adjustMinimum(minY, maxY, height-1),
 					  maxX,
 					  maxY);
 		return bounds;

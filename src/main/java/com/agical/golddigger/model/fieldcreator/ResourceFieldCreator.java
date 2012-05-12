@@ -57,8 +57,7 @@ public class ResourceFieldCreator extends FieldCreator {
 	}
 
 	@Override
-	public int getNumberOfSides() {
-		
+	public int getNumberOfSides() {		
 		return fieldCreator.getNumberOfSides();
 	}
 }

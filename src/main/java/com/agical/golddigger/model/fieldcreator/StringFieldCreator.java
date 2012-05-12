@@ -4,6 +4,7 @@ import com.agical.golddigger.model.Square;
 
 public class StringFieldCreator extends FieldCreator {
     
+	private static final String MAP_INFO_MARKER = "!\n";
     private static final int WALLS = 2;
     private final String result;
     private Square[][] squares;
@@ -17,8 +18,8 @@ public class StringFieldCreator extends FieldCreator {
     }
     
     public int getNumberOfSides(){
-    	if(result.contains("!")){
-    	String mapInfo = (result.split("!"))[1].toString();
+    	if(result.contains(MAP_INFO_MARKER)){
+    	String mapInfo = (result.split(MAP_INFO_MARKER))[1].toString();
 	    	if(mapInfo.contains("6")){
 	    		return 6;
     		}
@@ -33,7 +34,18 @@ public class StringFieldCreator extends FieldCreator {
 
     private Square[][] getSquares() {
         if(squares!=null) return squares;
-        String[] rows = (result.split("!")) [0].split("\n");
+        String[] rows = result.split("\n");
+        
+        //This if statement when integrated with the movement cost 
+        //code will need to be changed depending on how we will define the
+        //map info and the map String's placement in the .field file.
+        //Right now  this if statement is used to just get the default
+        //MapString ( the one without the movement costs).
+        if(result.contains(MAP_INFO_MARKER)){
+        	rows = (result.split(MAP_INFO_MARKER)) [2].split("\n");
+        }
+        
+        
         squares = new Square[rows.length][];
         for (int rowCount = 0; rowCount<rows.length; rowCount++) {
             String charRow = rows[rowCount];
